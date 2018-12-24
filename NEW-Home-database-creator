@@ -1,0 +1,324 @@
+UNIT DATABASE SETUP
+
+#Source:https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-18-04
+
+
+MYSQL DATABASE setup
+--------------------
+
+#______________Manual Procedure
+
+#instalation
+pip install pyDAL
+
+#updating
+sudo apt-get dist-upgrade
+sudo apt update
+sudo apt-get upgrade
+
+sudo apt-get install mysql-server
+pw: left blank
+sudo mysql_secure_installation
+pw: anything as it will not be used
+
+#msqlconnector
+sudo apt-get install python-mysqldb
+
+sudo mysql
+
+#Next, check which authentication method each of your MySQL user accounts use with the following command:
+
+SELECT user,authentication_string,plugin,host FROM mysql.user;
+CREATE USER 'hommey'@'localhost' IDENTIFIED BY 'Thulan12';
+create database HOME_storage;
+GRANT CREATE, SELECT,UPDATE,DELETE ON HOME_storage.* TO 'hommey'@'localhost';
+FLUSH PRIVILEGES;
+
+
+#THIS IS WHERE I HAVE TO CREATE TABLES IN SQL
+
+INSERT INTO Cam_ip VALUES ('1','EMPTY','EMPTY'),
+                      ('2','EMPTY','EMPTY'),
+                      ('3','EMPTY','EMPTY');
+
+
+INSERT INTO Alarm VALUES (1,'EMPTY',0,0,0),
+                         (null,'EMPTY',0,0,0),
+                         (null,'EMPTY',0,0,0),
+                         (null,'EMPTY',0,0,0),
+                         (null,'EMPTY',0,0,0),
+                         (null,'EMPTY',0,0,0),
+                         (null,'EMPTY',0,0,0),
+                         (null,'EMPTY',0,0,0),
+                         (null,'EMPTY',0,0,0),
+                         (null,'EMPTY',0,0,0),
+                         (null,'EMPTY',0,0,0),
+                         (null,'EMPTY',0,0,0),
+                         (null,'EMPTY',0,0,0),
+                         (null,'EMPTY',0,0,0),
+                         (null,'EMPTY',0,0,0),
+                         (null,'EMPTY',0,0,0),
+                         (null,'EMPTY',0,0,0),
+                         (null,'EMPTY',0,0,0),
+                         (null,'EMPTY',0,0,0),
+                         (null,'EMPTY',0,0,0),
+                         (null,'EMPTY',0,0,0),
+                         (null,'EMPTY',0,0,0),
+                         (null,'EMPTY',0,0,0),
+                         (null,'EMPTY',0,0,0),
+                         (null,'EMPTY',0,0,0),
+                         (null,'EMPTY',0,0,0),
+                         (null,'EMPTY',0,0,0),
+                         (null,'EMPTY',0,0,0),
+                         (null,'EMPTY',0,0,0),
+                         (null,'EMPTY',0,0,0),
+                         (null,'EMPTY',0,0,0),
+                         (null,'EMPTY',0,0,0),
+                         (null,'EMPTY',0,0,0),
+                         (null,'EMPTY',0,0,0),
+                         (null,'EMPTY',0,0,0),
+                         (null,'EMPTY',0,0,0),
+                         (null,'EMPTY',0,0,0),
+                         (null,'EMPTY',0,0,0),
+                         (null,'EMPTY',0,0,0),
+                         (null,'EMPTY',0,0,0),
+                         (null,'EMPTY',0,0,0),
+                         (null,'EMPTY',0,0,0),
+                         (null,'EMPTY',0,0,0),
+                         (null,'EMPTY',0,0,0),
+                         (null,'EMPTY',0,0,0),
+                         (null,'EMPTY',0,0,0),
+                         (null,'EMPTY',0,0,0),
+                         (null,'EMPTY',0,0,0),
+                         (null,'EMPTY',0,0,0),
+                         (null,'EMPTY',0,0,0);
+
+
+INSERT INTO Lights VALUES ('1','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('2','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('3','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('4','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('5','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('6','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('7','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('8','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('9','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('10','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('11','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('12','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('13','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('14','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('15','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('16','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('17','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('18','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('19','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('20','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('21','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('22','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('23','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('24','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('25','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('26','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('27','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('28','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('29','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('30','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('31','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('32','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('33','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('34','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('35','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('36','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('37','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('38','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('39','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('40','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('41','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('42','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('43','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('44','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('45','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('46','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('47','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('48','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('49','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('50','EMPTY','EMPTY','EMPTY','EMPTY');
+
+
+
+INSERT INTO irrigation VALUES ('1','EMPTY','EMPTY'),
+                              ('2','EMPTY','EMPTY'),
+                              ('3','EMPTY','EMPTY'),
+                              ('4','EMPTY','EMPTY'),
+                              ('5','EMPTY','EMPTY');
+
+
+INSERT INTO Plugs VALUES  ('1','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('2','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('3','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('4','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('5','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('6','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('7','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('8','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('9','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('10','EMPTY','EMPTY','EMPTY','EMPTY'),
+
+                          ('11','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('12','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('13','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('14','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('15','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('16','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('17','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('18','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('19','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('20','EMPTY','EMPTY','EMPTY','EMPTY'),
+
+                          ('21','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('22','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('23','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('24','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('25','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('26','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('27','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('28','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('29','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('30','EMPTY','EMPTY','EMPTY','EMPTY'),
+
+                          ('31','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('32','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('33','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('34','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('35','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('36','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('37','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('38','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('39','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('40','EMPTY','EMPTY','EMPTY','EMPTY'),
+
+                          ('41','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('42','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('43','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('44','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('45','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('46','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('47','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('48','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('49','EMPTY','EMPTY','EMPTY','EMPTY'),
+                          ('50','EMPTY','EMPTY','EMPTY','EMPTY');
+                                                                 
+
+
+
+
+
+
+
+INSERT INTO Curtain VALUES ('1','EMPTY','EMPTY','EMPTY','EMPTY'),
+                           ('2','EMPTY','EMPTY','EMPTY','EMPTY'),
+                           ('3','EMPTY','EMPTY','EMPTY','EMPTY'),
+                           ('4','EMPTY','EMPTY','EMPTY','EMPTY'),
+                           ('5','EMPTY','EMPTY','EMPTY','EMPTY'),
+                           ('6','EMPTY','EMPTY','EMPTY','EMPTY'),
+                           ('7','EMPTY','EMPTY','EMPTY','EMPTY'),
+                           ('8','EMPTY','EMPTY','EMPTY','EMPTY'),
+                           ('9','EMPTY','EMPTY','EMPTY','EMPTY'),
+                           ('10','EMPTY','EMPTY','EMPTY','EMPTY'),
+
+                           ('11','EMPTY','EMPTY','EMPTY','EMPTY'),
+                           ('12','EMPTY','EMPTY','EMPTY','EMPTY'),
+                           ('13','EMPTY','EMPTY','EMPTY','EMPTY'),
+                           ('14','EMPTY','EMPTY','EMPTY','EMPTY'),
+                           ('15','EMPTY','EMPTY','EMPTY','EMPTY'),
+                           ('16','EMPTY','EMPTY','EMPTY','EMPTY'),
+                           ('17','EMPTY','EMPTY','EMPTY','EMPTY'),
+                           ('18','EMPTY','EMPTY','EMPTY','EMPTY'),
+                           ('19','EMPTY','EMPTY','EMPTY','EMPTY'),
+                           ('20','EMPTY','EMPTY','EMPTY','EMPTY'),
+
+                           ('21','EMPTY','EMPTY','EMPTY','EMPTY'),
+                           ('22','EMPTY','EMPTY','EMPTY','EMPTY'),
+                           ('23','EMPTY','EMPTY','EMPTY','EMPTY'),
+                           ('24','EMPTY','EMPTY','EMPTY','EMPTY'),
+                           ('25','EMPTY','EMPTY','EMPTY','EMPTY'),
+                           ('26','EMPTY','EMPTY','EMPTY','EMPTY'),
+                           ('27','EMPTY','EMPTY','EMPTY','EMPTY'),
+                           ('28','EMPTY','EMPTY','EMPTY','EMPTY'),
+                           ('29','EMPTY','EMPTY','EMPTY','EMPTY'),
+                           ('30','EMPTY','EMPTY','EMPTY','EMPTY'),
+
+                           ('31','EMPTY','EMPTY','EMPTY','EMPTY'),
+                           ('32','EMPTY','EMPTY','EMPTY','EMPTY'),
+                           ('33','EMPTY','EMPTY','EMPTY','EMPTY'),
+                           ('34','EMPTY','EMPTY','EMPTY','EMPTY'),
+                           ('35','EMPTY','EMPTY','EMPTY','EMPTY'),
+                           ('36','EMPTY','EMPTY','EMPTY','EMPTY'),
+                           ('37','EMPTY','EMPTY','EMPTY','EMPTY'),
+                           ('38','EMPTY','EMPTY','EMPTY','EMPTY'),
+                           ('39','EMPTY','EMPTY','EMPTY','EMPTY'),
+                           ('40','EMPTY','EMPTY','EMPTY','EMPTY'),
+
+                           ('41','EMPTY','EMPTY','EMPTY','EMPTY'),
+                           ('42','EMPTY','EMPTY','EMPTY','EMPTY'),
+                           ('43','EMPTY','EMPTY','EMPTY','EMPTY'),
+                           ('44','EMPTY','EMPTY','EMPTY','EMPTY'),
+                           ('45','EMPTY','EMPTY','EMPTY','EMPTY'),
+                           ('46','EMPTY','EMPTY','EMPTY','EMPTY'),
+                           ('47','EMPTY','EMPTY','EMPTY','EMPTY'),
+                           ('48','EMPTY','EMPTY','EMPTY','EMPTY'),
+                           ('49','EMPTY','EMPTY','EMPTY','EMPTY'),
+                           ('50','EMPTY','EMPTY','EMPTY','EMPTY');
+                                                                   
+
+INSERT INTO Cam_ip VALUES  ('1','EMPTY','EMPTY'),
+                           ('2','EMPTY','EMPTY'),
+                           ('3','EMPTY','EMPTY'),
+                           ('4','EMPTY','EMPTY'),
+                           ('5','EMPTY','EMPTY'),
+                           ('6','EMPTY','EMPTY'),
+                           ('7','EMPTY','EMPTY'),
+                           ('8','EMPTY','EMPTY'),
+                           ('9','EMPTY','EMPTY'),
+                           ('10','EMPTY','EMPTY'),
+
+                           ('11','EMPTY','EMPTY'),
+                           ('12','EMPTY','EMPTY'),
+                           ('13','EMPTY','EMPTY'),
+                           ('14','EMPTY','EMPTY'),
+                           ('15','EMPTY','EMPTY'),
+                           ('16','EMPTY','EMPTY'),
+                           ('17','EMPTY','EMPTY'),
+                           ('18','EMPTY','EMPTY'),
+                           ('19','EMPTY','EMPTY'),
+                           ('20','EMPTY','EMPTY');
+
+INSERT INTO Motivation VALUES ('1','EMPTY');
+
+
+
+exit
+
+
+#++++++++++++++++++++++++TEMP ROOT
+ mysql -u hardware_root -p;
+pw: Neohome
+
+
+
+-------------------------------NOTES------------------------------------------------
+------------------------------------------------------------------------------------
+
+#ROOT#
+mysql -u root -p;
+pw: Neohome
+
+
+
+#HOMMEY#
+mysql -u -hommey -p
+pwd: Thulan12
+_______________________________________________________________________________________
+
+

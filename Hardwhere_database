@@ -1,0 +1,129 @@
+#Vision:1
+#                  ---> HOUSE_storage <---
+
+
+
+
+MYSQL setup
+'''
+https://www.digitalocean.com/community/tutorials/how-to-secure-mysql-and-mariadb-databases-in-a-linux-vps
+'''
+
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install mysql-server
+sudo mysql_install_db
+
+
+'''
+https://askubuntu.com/questions/787342/how-to-install-mysql-on-
+'''
+
+
+sudo mysql_secure_installation
+pw:Thulan12
+
+
+'''
+You should answer "Y" (for yes) to all of the remaining questions.
+'''
+
+
+New password : Neohome
+sudo nano /etc/mysql/my.cnf
+   
+    
+'''
+find
+'''
+
+
+bind-address = 127.0.0.1
+
+'''
+add
+'''
+
+
+local-infile=0
+
+
+'''
+log is only for hardware as it slowsdown hugedb
+FIND and remove #
+'''
+
+
+log=/var/log/mysql-logfile
+sudo ls -l /var/log/mysql*
+
+
+'''
+Securing MySQL From Within
+'''
+
+
+mysql -u root -p
+pw: Neohome
+
+
+'''
+First, make sure there are no users without a password or a host association in MySQL:
+'''
+
+
+SELECT User,Host,authentication_string FROM mysql.user;
+
+    
+CREATE USER 'hommey'@'localhost' IDENTIFIED BY 'Thulan12';
+UPDATE mysql.user SET Password=PASSWORD('Thulan12') WHERE User="hommey";
+SELECT User,Host,Password FROM mysql.user;
+
+FLUSH PRIVILEGES;
+
+
+'''
+Implementing Application-Specific Users
+'''
+
+
+create database HOME_storage;
+   
+    
+'''
+Next, we should create a user to manage that database, and assign it only the privileges itneeds. This will vary by application, and some uses need more open privileges than others.
+'''
+
+
+GRANT CREATE, SELECT,UPDATE,DELETE ON HOME_storage.* TO 'hommey'@'localhost';
+FLUSH PRIVILEGES;
+show grants for 'hommey'@'localhost';
+
+
+'''
+Changing the Root User
+One additional step that you may want to take is to change the root login name. If an attacker is trying to access the root MySQL login, they will need to perform the additional step of finding the username.
+
+The root login can be changed with the following command:
+'''
+
+
+rename user 'root'@'localhost' to 'hardware_root'@'localhost';
+FLUSH PRIVILEGES;
+exit
+
+------------------------------------------------------------------------------------
+'''
+ROOT
+'''
+mysql -u hardware_root -p;
+pw: Neohome
+
+'''
+user
+'''
+mysql -u hommey -p;
+pw: Thulan12
+-----------------------------------------------------------------------------------
+
+
